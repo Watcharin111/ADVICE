@@ -29,9 +29,9 @@ namespace ADVICE
         {
             label1.SetBounds(x,y,1,1);
             x--;
-            if (x <= -10)
+            if (x <= -300)
             {
-                x = 500;
+                x = 1500;
             }
 
             int h = DateTime.Now.Hour;
@@ -87,10 +87,11 @@ namespace ADVICE
         {
             String date = "";
             date = date + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
-
             label3.Text = date;
-             
+            String youtube = "https://www.youtube.com/watch?v=vetKTtM7YyU";
 
+            axVLCPlugin21.playlist.add(new Uri(youtube).AbsoluteUri);
+            axVLCPlugin21.playlist.play();
 
 
             label1.Text = "ประยุทธ์ จันโอชา";
@@ -99,5 +100,6 @@ namespace ADVICE
             timer1.Start();
 
         }
+
     }
 }
