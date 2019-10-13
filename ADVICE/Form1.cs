@@ -39,26 +39,8 @@ namespace ADVICE
             int ss = DateTime.Now.Second;
             
             String time = "";
-            if (hh > 10 && mm > 10 && ss <10)
-            {
-                label2.Text = "" + hh + ":" + mm + ":0" + ss;
-            }
-            else if (hh > 10 && mm < 10 && ss < 10)
-            {
-                label2.Text = "" + hh + ":0" + mm + ":0" + ss;
-            }
-
-
-
-            else if (hh < 10 && mm <10 && ss < 10)
-            {
-                label2.Text = "0" + hh + ":0" + mm + ":0" + ss;
-            }
-            else
-            {
-                label2.Text = "" + hh + ":" + mm + ":" + ss;
-            }
-           // label2.Text = hh+":"+mm+":"+ss;
+            
+           label2.Text = hh+":"+mm+":"+ss;
 
 
         }
@@ -70,10 +52,21 @@ namespace ADVICE
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
 
-            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            String date = "";
+            date = date + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+
+            label3.Text = date;
+             
+
+
+
             label1.Text = "ประยุทธ์ จันโอชา";
             label1.Font = new Font("", 25, FontStyle.Bold);
             timer1.Interval = 1;
