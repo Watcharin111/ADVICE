@@ -34,13 +34,39 @@ namespace ADVICE
                 x = 500;
             }
 
-            int hh = DateTime.Now.Hour;
-            int mm = DateTime.Now.Minute;
-            int ss = DateTime.Now.Second;
+            int h = DateTime.Now.Hour;
+            int m = DateTime.Now.Minute;
+            int s = DateTime.Now.Second;
             
             String time = "";
+            if(h < 10)
+            {
+                time = time + "0" + h;
+            }
+            else
+            {
+                time = time + h;
+            }
+            time = time + ":";
+            if(m < 10)
+            {
+                time = time + "0" + m;
+            }
+            else
+            {
+                time = time + m;
+            }
+            time = time + ":";
+            if(s < 10)
+            {
+                time = time + "0" + s;
+            }
+            else
+            {
+                time = time + s;
+            }
             
-           label2.Text = hh+":"+mm+":"+ss;
+           label2.Text = time;
 
 
         }
