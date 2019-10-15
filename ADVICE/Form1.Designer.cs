@@ -34,14 +34,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.axVLCPlugin21 = new AxAXVLC.AxVLCPlugin2();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.demobuttonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.democlickToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,10 +69,10 @@
             this.label1.Size = new System.Drawing.Size(244, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "----------------";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // timer1
             // 
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // panel2
@@ -82,18 +87,16 @@
             this.panel2.Size = new System.Drawing.Size(331, 454);
             this.panel2.TabIndex = 1;
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(66, 336);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 52);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "time";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(47, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(232, 293);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -106,18 +109,18 @@
             this.label3.Size = new System.Drawing.Size(75, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "date";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(47, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 293);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(66, 336);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 51);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "time";
             // 
             // axVLCPlugin21
             // 
@@ -129,11 +132,43 @@
             this.axVLCPlugin21.Size = new System.Drawing.Size(760, 454);
             this.axVLCPlugin21.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.demobuttonToolStripMenuItem,
+            this.democlickToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 76);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
+            // 
+            // demobuttonToolStripMenuItem
+            // 
+            this.demobuttonToolStripMenuItem.Name = "demobuttonToolStripMenuItem";
+            this.demobuttonToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.demobuttonToolStripMenuItem.Text = "demobutton";
+            this.demobuttonToolStripMenuItem.Click += new System.EventHandler(this.DemobuttonToolStripMenuItem_Click);
+            // 
+            // democlickToolStripMenuItem
+            // 
+            this.democlickToolStripMenuItem.Name = "democlickToolStripMenuItem";
+            this.democlickToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.democlickToolStripMenuItem.Text = "democlick";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.toolStripMenuItem1.Text = "จัดการ";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 674);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.axVLCPlugin21);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -148,6 +183,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axVLCPlugin21)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -162,6 +198,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private AxAXVLC.AxVLCPlugin2 axVLCPlugin21;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem demobuttonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem democlickToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
